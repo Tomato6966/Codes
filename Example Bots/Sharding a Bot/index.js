@@ -10,8 +10,16 @@ const client = new Discord.Client({
   disableEveryone: true,
   partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
-
-client.on("message", message => {
+//READY EVENT
+client.on("ready", () => {
+  console.log(`${client.user.tag} Is now ready use. WAIT FOR ALL SHARDS TO GET READY!`);
+  change_status(client);
+  setInterval(()=>{
+    change_status(client);
+  }, 15 * 1000);
+})
+//MESSAGE EVENT
+client.on("message", async message => {
 // Ignore all bots and not guilds
   if (message.author.bot || !message.guild) return;
   // Ignore messages not starting with the prefix
@@ -63,6 +71,25 @@ client.on("message", message => {
 });
 //login to the BOT
 client.login(config.token);
+//FUNCTION TO CHAGNE THE STATUS
+function change_status(client){
+  try{
+    const promises = [
+			client.shard.fetchClientValues('guilds.cache.size'),
+			client.shard.broadcastEval('this.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)')
+		];
+		return Promise.all(promises)
+			.then(results => {
+				const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
+				const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
+        for(const shard of client.shard.ids)
+          //custom status per shard ;)
+        client.user.setActivity(`milrato.eu | #${shard} Shard | ${totalGuilds} Guilds | ${Math.ceil(totalMembers/1000)}k Members`, {type: "WATCHING", shardID: shard});
+			}).catch(console.error);
+  }catch (e) {
+      client.user.setActivity(`milrato.eu | #0 Shard | ${client.guilds.cache.size} Guilds | ${Math.ceil(client.users.cache.size/1000)}k Members`, {type: "WATCHING", shardID: 0});
+  }
+}
 /**
   * @INFO
   * Bot Coded by Tomato#6966 | https://github.com/Tomato6966/discord-js-lavalink-Music-Bot-erela-js
