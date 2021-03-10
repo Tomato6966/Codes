@@ -7,10 +7,12 @@
 //   Asterisk. E.g. *       
 //   Ranges. E.g. 1-3,5         * 0 */2 * * *   === runs evey 2 hours at "0" minute  
 //   Steps. E.g. */2
-```
-CODE: 
-```js
-//client definition
+
+
+const Discord = require("discord.js");
+const client = new Discord.Client();
+client.login("YOURTOKEN");
+
 //CODE ...
 
 //define the cronconfiguration for the edit messages
@@ -28,9 +30,11 @@ job.start();
 
 //function to edit the message param edit_msg {*} client ... your DiscordClient usually defined by: const client = new Discord.Client();
 async function edit_msg(client){ 
-  let channel = await client.channels.fetch(edit_msg_config.channel_id); //get the channel where the message is which u want to edit
-  let message = await channel.messages.fetch(edit_msg_config.message_id); //get the message u want to edit
-  message.edit(`Your New Message Created at: ${String(new Date).split(" ", 5).join(" ")}`) //edit the message with your new content ;)
+  //uncomment if there are parameters in the config up there!
+  //let channel = await client.channels.fetch(edit_msg_config.channel_id); //get the channel where the message is which u want to edit
+  //let message = await channel.messages.fetch(edit_msg_config.message_id); //get the message u want to edit
+  //message.edit(`Your New Message Created at: ${String(new Date).split(" ", 5).join(" ")}`) //edit the message with your new content ;)
+  console.log(`Your New Message Created at: ${String(new Date).split(" ", 5).join(" ")}`)
 }
 
 //code...
