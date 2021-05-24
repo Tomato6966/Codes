@@ -17,3 +17,33 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     if (oldState.channelID && !newState.channelID) return console.log(`${usertag} left: ${oldState.channel.name}`);
     if (oldState.channelID && newState.channelID) return console.log(`${usertag} switched from: ${oldState.channel.name} to: ${newState.channel.name}`);
   });
+
+//SECOND OPTION IS OPTIMISED JUST FOR THE JOIN AND LEAVE AND SWITCHING: 
+  client.on("voiceStateUpdate", (oldState, newState) => {
+    let usertag = newState.member.user.tag;
+    if (
+        (!oldState.streaming && newState.streaming)   ||
+        (oldState.streaming && !newState.streaming)   ||
+        (!oldState.serverDeaf && newState.serverDeaf) ||
+        (oldState.serverDeaf && !newState.serverDeaf) ||
+        (!oldState.serverMute && newState.serverMute) ||
+        (oldState.serverMute && !newState.serverMute) || 
+        (!oldState.selfDeaf && newState.selfDeaf)     ||
+        (oldState.selfDeaf && !newState.selfDeaf)     ||
+        (!oldState.selfMute && newState.selfMute)     ||
+        (oldState.selfMute && !newState.selfMute)     ||
+        (!oldState.selfVideo && newState.selfVideo)   ||
+        (oldState.selfVideo && !newState.selfVideo) 
+     )
+    if (!oldState.channelID && newState.channelID) {
+
+        return console.log(`${usertag} joined: ${newState.channel.name}`);
+    }
+    if (oldState.channelID && !newState.channelID) {
+
+        return console.log(`${usertag} left: ${oldState.channel.name}`);
+    }
+    if (oldState.channelID && newState.channelID) {
+        return console.log(`${usertag} switched from: ${oldState.channel.name} to: ${newState.channel.name}`);
+    }
+  });
