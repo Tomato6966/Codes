@@ -9,14 +9,13 @@ const emojis = [ "🍏", "🍎", "🍐", "🍊", "🍋", "🍌", "🍉", "🍇",
 client.on('ready', () => console.log(`Logged in as ${client.user.tag}!`) );
 //executing the Cmd
 client.on('message', msg => {
-  if(msg.author.id != "442355791412854784") return
+  if(!msg.guild || msg.author.bot) return;
   if (msg.content === '!react') {
     const date1 = Date.now();
     msg.reply('REACTING...').then(async msg => {
-        for(const emoji of emojis)
-            await msg.react(emoji)
+        for(const emoji of emojis)  await msg.react(emoji)
         msg.edit(`It took me: ${(Date.now() - date1) / 1000} Seconds to react with ${emojis.length} Emojis!`)
-    })
+    }).catch(e=>console.log(e));
   }
 });
 //logging in the BOT
