@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 //creating the client
 const client = new Discord.Client({
-    disableMentions: "all",
-    shards: "auto",
     restTimeOffset: 0
 });
 //Defining all emojis
