@@ -79,7 +79,7 @@ client.on("message", async message => {
 
 //MY VERSION - EXPENDABLE AUTOMATICALLY
 client.on("message", async message => {
-    //if not in a guild and not !mneu
+    //if not in a guild and not !menu
     if(!message.guild || !message.content.startsWith("!!menu") || message.author.bot) return;
     
     //COMMAND HANDLER FRIENDLY, just a REALLY BASIC example
