@@ -45,9 +45,8 @@ client.on("message", async message => {
             .setMaxValues(1)
             .setMinValues(1)
             .setPlaceholder("Click me to make a Selection! | POG")
-            .addOption(option1)
-            .addOption(option2)
-            .addOption(option3)
+            .addOptions(option1, option2, option3)
+        
         let embed = new Discord.MessageEmbed()
         .setColor("RANDOM").setTitle("SELECT NO!")
 
