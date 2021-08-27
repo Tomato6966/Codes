@@ -1,0 +1,15 @@
+{
+    "token": "BOT TOKEN",
+    "slashcommands": [
+       {
+          "name": "ping",
+          "description": "Show the Client Ping"
+       }, {
+          "name": "discord",
+          "description": "Shows our Discord Server"
+       }, {
+          "name": "help",
+          "description": "Shows help for this Bot"
+       }
+     ]
+ }

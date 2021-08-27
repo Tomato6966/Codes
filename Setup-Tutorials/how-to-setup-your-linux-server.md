@@ -1,129 +1,64 @@
-# How-to-setup-your-Linux-Server
-How to setup your Linux Server and install nodejs, python, ffmpeg and java. Working good for Discord Bot hosting and other hostings!
+# This Wiki Is ment to give you an overview how to setup a LINUX (DEBIAN) Server
 
-## [**DISCORD SUPPORT SERVER INVITE**](https://support.milrato.eu)
+> It covers many things, from python over nodejs to java and webservers and more!
+> Working good for Discord Bot hosting and other hostings!
+
+### [**DISCORD SUPPORT SERVER INVITE**](https://support.milrato.eu)
+
+***
+
+# __**Table of Contents**__
+
+- ## [**Home**](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki)
+
+***
+
+- [**__1 All needed Console Commands__**](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1-All-needed-Console-Commands)
+    - [1.1 Directory Navigation](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1.1-Directory-Navigation)
+    - [1.2 System Information](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1.2-System-Information)
+    - [1.3 Hardware Information](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1.3-Hardware-Information)
+    - [1.4 File and Directory Cmds](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1.4-File-and-Directory-Commands)
+    - [1.5 Process Management](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1.5-Process-Management)
+    - [1.6 File Permissions](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1.6-File-Permissions)
+    - [1.7 Networking](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1.7-Networking)
+    - [1.8 Archives (Tar Files)](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1.8-Archives-(Tar-Files))
+    - [1.9 Search](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1.9-Search)
+    - [1.10 File Transfers](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1.10-File-Transfers)
+    - [1.11 Disk Usage](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1.11-Disk-Usage)
+    - [1.12 User Information and Management](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/1.12-User-Information-and-Management)
+    - [1.13 Speedtest](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/1.13-Speedtest)
+    - [1.14 Clear Cache](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/1.14-Clear-Cache)
+
+***
+
+- [**__2 Do that before everything__**](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/2-Do-that-Before!)
+    - [2.1 Youtube Tutorial](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/2.1-Youtube-Tutorial)
+    - [2.2 Installing Essentials](https://github.com/Tomato6966/how-to-setup-your-linux-server/wiki/2.2-Installing-Essentials)
+
+***
+
+- [**__3 Installing 3rd Party Packages__**](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3-Install-3rd-Parties)
+    - [3.0 All in One](https://github.com/Tomato6966/Debian-Cheat-Sheet-Setup/wiki/3.0-All-in-One)
+    - [3.1 Nodejs & npm](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.1-Install-nodejs-and-npm)
+    - [3.2 Yarn](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.2-Install-Yarn)
+    - [3.3 Python](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.3-Install-python)
+        - [*3.3.1 pip*](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.3.1-pip)
+        - [*3.3.2 pip3*](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.3.2-pip3)
+        - [*3.3.3 Python3.9*](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.3.3-python3.9)
+    - [3.4 FFMPEG](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.4-ffmpeg)
+    - [3.5 Java](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.5-java)
+        - [*3.5.1 Java 8*](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.5.1-java-8)
+        - [*3.5.2 Java 11*](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.5.2-java-11)
+        - [*3.5.3 Java 13*](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.5.3-java-13)
+        - [*3.5.4 Java 15*](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.5.4-java-15)
+        - [*3.5.5 Java 16*](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.5.5-java-16)
+        - [*3.5.6 Troubleshooting*](https://github.com/Tomato6966/Debian-Cheat-Sheet-Setup/wiki/3.5.6-Troubleshooting)
+    - [3.6 Lighttpd with php](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.6-Lighttpd-with-php)
+    - [3.7 Git](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/3.7-Git)
+- [4 pm2 Tutorial](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/4-pm2-tutorial)
+- [5 Support Me](https://github.com/Tomato6966/Debian-Cheat-Sheat-Setup/wiki/5-support-me)
+
 
 ## youtube tutorial:
 
 [![](http://img.youtube.com/vi/mj0nKw3GQlc/0.jpg)](http://www.youtube.com/watch?v=mj0nKw3GQlc "Linux Tutorial")
-
-# Console cmds
-*Those commands are all needed to install and setup a Debian (Linux) Server for Bot hosting, and general stuff like everything!*
-
-## installing essentials!
-**1. Install sudo**
-```
-apt-get install sudo
-```
-
-**2. Install all needed dependences**
-```
-sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev curl
-```
-
-## Installing nodejs v16 && npm v7.4
-```
-sudo apt update
-sudo apt install -y build-essential curl
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-sudo apt install -y nodejs
-```
-
-## Installing yarn (optional)
-```
-curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update
-sudo apt install -y yarn
-```
-
-
-## Install python
-
-### Installing pip
-```
-sudo apt-get install python-pip
-```
-#### OR:
-```
-sudo apt-get install python3-pip
-```
-
-### Installing any other Python-Version, here 3.9.1 *It will take at least 5 Minutes, just wait...*
-```
-curl -O https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz
-tar -xf Python-3.9.1.tar.xz
-cd Python-3.9.1
-./configure --enable-optimizations
-make -j 4
-sudo make altinstall
-python3.9 --version
-```
-
-## Install FFMPEG
-```
-sudo apt update
-sudo apt install ffmpeg
-ffmpeg -version
-```
-
-
-## Install Java 13
-```
-wget https://download.java.net/openjdk/jdk13/ri/openjdk-13+33_linux-x64_bin.tar.gz
-sudo mkdir -p /usr/lib/jvm
-sudo tar zxvf openjdk-13+33_linux-x64_bin.tar.gz -C /usr/lib/jvm
-sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk-13/bin/java" 1
-sudo update-alternatives --set java /usr/lib/jvm/jdk-13/bin/java
-java -version
-```
-
-
-# SUPPORT ME AND MILRATO DEVELOPMENT
-
-You can always Support me by inviting one of my **own Discord Bots**
-
-[![2021's best Music Bot | Lava Music](https://cdn.discordapp.com/attachments/748533465972080670/817088638780440579/test3.png)](https://lava.milrato.eu)
-[![Musicium Music Bot](https://cdn.discordapp.com/attachments/742446682381221938/770055673965707264/test1.png)](https://dc.musicium.eu)
-[![Milrato Multi Bot](https://cdn.discordapp.com/attachments/742446682381221938/770056826724679680/test1.png)](https://dc.milrato.eu)
-
-## Sponsors
-
-### BEST HOSTING | Bittmax.de
-BITTMAX Quality is their solution.
-Bittmax is our first and probably most important sponsor!
-
-**What they are offering:**
-> Quality LXC & KVM (Root) Server
-> Minecraft Hosting, as well as BungeeCord Network Hosting support
-> Cheap and fast Domains
-> WEBHOSTING
-> DISCORD, TEAMSPEAK, Setups / Music Bots
-> GAME SERVER, Rust, Gary's Mod, ..
-
-**Discord Server:**
-[https://discord.gg/GgjJZCyYKD](https://discord.gg/GgjJZCyYKD)
-
-**Website:**
-[https://bittmax.de/](https://bittmax.de/])
-
-GET **5%** OFF EVERYTHING FOR EVER!
-Code: **`x10`**
-
-### MC-Host24.de
-MC-Host24.de is selling the Best Digital Hosting Services ever!
-Like For games..
-
-**What they are offering:**
-> Quality LXC & KVM (Root) Server
-> WORLDS BEST Minecraft Hosting,
-> Cheap and fast Domains
-> WEBHOSTING
-> DISCORD, TEAMSPEAK, Setups / Music Bots
-> GAME SERVER, Rust, Gary's Mod, ..
-
-**Discord Server:**
-[https://discord.com/invite/4dGuGXK4A4](https://discord.com/invite/4dGuGXK4A4)
-
-**Website:**
-[mc-host24.de](https://mc-host24.de/user/affiliate/3121])

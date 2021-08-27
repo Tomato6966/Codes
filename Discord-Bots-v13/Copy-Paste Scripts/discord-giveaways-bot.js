@@ -1,0 +1,1 @@
+//VISIT: https://github.com/Tomato6966/discord-giveaways/blob/master/examples/simple.js
