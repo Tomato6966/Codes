@@ -21,20 +21,20 @@ client.on("voiceStateUpdate", (oldState, newState) => {
 //SECOND OPTION IS OPTIMISED JUST FOR THE JOIN AND LEAVE AND SWITCHING: 
   client.on("voiceStateUpdate", (oldState, newState) => {
     let usertag = newState.member.user.tag;
-    if (
-        (!oldState.streaming && newState.streaming)   ||
-        (oldState.streaming && !newState.streaming)   ||
-        (!oldState.serverDeaf && newState.serverDeaf) ||
-        (oldState.serverDeaf && !newState.serverDeaf) ||
-        (!oldState.serverMute && newState.serverMute) ||
-        (oldState.serverMute && !newState.serverMute) || 
-        (!oldState.selfDeaf && newState.selfDeaf)     ||
-        (oldState.selfDeaf && !newState.selfDeaf)     ||
-        (!oldState.selfMute && newState.selfMute)     ||
-        (oldState.selfMute && !newState.selfMute)     ||
-        (!oldState.selfVideo && newState.selfVideo)   ||
-        (oldState.selfVideo && !newState.selfVideo) 
-     )
+      if (
+      (!oldState.streaming === false && newState.streaming === true)   ||
+      (oldState.streaming === true && !newState.streaming === false)   ||
+      (!oldState.serverDeaf === false && newState.serverDeaf === true) ||
+      (oldState.serverDeaf === true && !newState.serverDeaf === false) ||
+      (!oldState.serverMute === false && newState.serverMute === true) ||
+      (oldState.serverMute === true && !newState.serverMute === false) || 
+      (!oldState.selfDeaf === false && newState.selfDeaf === true)     ||
+      (oldState.selfDeaf === true && !newState.selfDeaf === false)     ||
+      (!oldState.selfMute === false && newState.selfMute === true)     ||
+      (oldState.selfMute === true && !newState.selfMute === false)     ||
+      (!oldState.selfVideo === false && newState.selfVideo === true)   ||
+      (oldState.selfVideo === true && !newState.selfVideo === false) 
+   ) return;
     if (!oldState.channelID && newState.channelID) {
 
         return console.log(`${usertag} joined: ${newState.channel.name}`);
