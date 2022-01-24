@@ -5,6 +5,7 @@ const client = new Discord.Client({
       parse: ["roles", "users", /* "everyone" */],
       repliedUser: false, //set true if you want to ping the bot on reply messages
     },
+    failIfNotExists: false,
     partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
     intents: [ 
         Discord.Intents.FLAGS.GUILDS,
@@ -31,7 +32,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', async (message) => {
+client.on('messageCreate', async (message) => {
     if (!message.guild || message.author.bot) return;
     if (message.channel.partial) await message.channel.fetch();   
     if (message.partial) await message.fetch();
